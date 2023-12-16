@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>{{ details.title }} Details</title>
+</head>
+<body>
+<!-- normalized = ['id','title','danceability','energy','mode','acousticness','tempo','duration_ms','num_sections','num_segments']
+ -->
+<div class="container">
+    <h1>{{ details.title }} Details</h1>
+    <ul>
+        <li><strong>Title:</strong> {{ details.title }}</li>
+        <li><strong>Danceability:</strong> {{ details.danceability }}</li>
+        <li><strong>Energy:</strong> {{ details.energy }}</li>
+        <li><strong>Mode:</strong> {{ details.mode }}</li>
+        <li><strong>Acousticness:</strong> {{ details.acousticness }}</li>
+        <li><strong>Tempo:</strong> {{ details.tempo }}</li>
+        <li><strong>Duration:</strong> {{ details.duration_ms }}</li>
+        <li><strong>Number of Sections:</strong> {{ details.num_sections }}</li>
+        <li><strong>Number of Segments:</strong> {{ details.num_segments }}</li>
+        <li><strong>Rating:</strong> {{ details.rating }}</li>
+        <li style="display: flex; align-items: 'center';">
+            <strong>Rate the song</strong>
+            <form action="{{ url_for('rate_song', song_id=details.index+1) }}" method="post" class="rating-form">
+                {% for star in range(1, 6) %}
+                    <input type="radio" id="star{{ star }}-{{ loop.index }}" name="rating" value="{{ star }}">
+                    <label for="star{{ star }}-{{ loop.index }}" title="{{ star }} star"></label>
+                {% endfor %}
+                <button type="submit">Submit</button>
+            </form>
+        </li>
+    </ul>
+    <div class="links">
+        <a href="{{ url_for('display_songs') }}" class="link-left">Back to Song List</a>
+        <a href="{{ url_for('get_lyrics', song_id=details.index ) }}" class="link-right">View Lyrics</a>
+    </div>
+    
+</div>
+
+</body>
+</html>

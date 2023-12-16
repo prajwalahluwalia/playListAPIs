@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+.search-container {
+    margin-bottom: 20px;
+    justify-content: center;
+    display: flex;
+}
+
+input[type="text"], button {
+    padding: 8px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ddd;
+    margin-bottom: 5px;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.song-info, .link-left {
+    flex: 1;
+}
+
+.rating, .link-right {
+    display: flex;
+    align-items: center;
+    width: 150px; /* Adjust the width as needed */
+}
+
+.rating-form {
+    margin-top: 10px;
+    
+}
+
+label[for^="star"] {
+    font-size: 1.5em;
+    color: #ccc;
+    cursor: pointer;
+}
+
+input[type="radio"]:checked + label[for^="star"] {
+    color: #ffcc00;
+}
+
+#pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#pagination a {
+    padding: 8px;
+    margin: 0 5px;
+    text-decoration: none;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+}

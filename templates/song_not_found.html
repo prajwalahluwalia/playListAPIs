@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>{{ type }} Not Found</title>
+</head>
+<body>
+
+<div class="container">
+    <h1>{{ type }} Not Found</h1>
+    <p>The requested {{ type }} does not exist. Please check the URL or go back to the <a href="{{ url_for('display_songs') }}">Song List</a>.</p>
+</div>
+
+</body>
+</html>

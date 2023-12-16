@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>{{ details.title }} Lyrics</title>
+</head>
+<body>
+
+<div class="container">
+    <h1>{{ details.title }} Lyrics</h1>
+    <pre>{{ details.lyrics }}</pre>
+    <a href="{{ url_for('display_songs') }}">Back to Song List</a>
+</div>
+
+</body>
+</html>
