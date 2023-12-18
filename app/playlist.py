@@ -16,11 +16,13 @@ class PlayList:
                 data = json.load(f)
                 
             self.df = pd.DataFrame(data)
-            
+            self.df['duration_ms'] = pd.to_datetime(self.df['duration_ms'], unit='ms').dt.strftime('%M:%S')
+
             for cols in self.normalized:
                 if cols not in self.df.columns:
                     self.df[cols] = 'NA'
-                    
+            
+            print(self.df)    
             return self.df
         
         except Exception as e:
